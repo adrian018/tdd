@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    use RecordActivity;
+    use RecordsActivity;
     /**
      * Attributes to guard against mass assignment.
      *

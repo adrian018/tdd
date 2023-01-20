@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    use RecordActivity;
+    use RecordsActivity;
+
     /**
      * Attributes to guard against mass assignment.
      *
@@ -53,15 +54,5 @@ class Project extends Model
     public function addTask($body)
     {
         return $this->tasks()->create(compact('body'));
-    }
-
-    /**
-     * The activity feed for the project.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function activity()
-    {
-        return $this->hasMany(Activity::class)->latest();
     }
 }
